@@ -1,7 +1,6 @@
 import hashlib
 
 def main():
-    # Example hash: '5f4dcc3b5aa765d61d8327deb882cf99' (MD5 of 'password')
     target_hash = input("Enter the hash to crack: ")
     wordlist = input("Path to wordlist: ")
     hash_type = input("Enter the hash type (md5, sha1, sha256, sha512): ").lower()
