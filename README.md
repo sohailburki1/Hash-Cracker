@@ -79,13 +79,21 @@ Enter the hash type (md5, sha1, sha256, sha512): md5
 
 You can create a sample wordlist (`wordlist.txt`) with the following content:
 ```
-orange
-banana
-grape
-apple
-pear
-watermelon
-kiwi
+23456 
+123456789 
+admin 
+Qwerty 
+welcome 
+Password 
+Password1 
+p@ssw0rd 
+12345 
+Qwerty123 
+1q2w3e 
+12345678 
+111111 
+1234567890 
+Q2w3e4r5t
 ```
 
 ### How It Works
