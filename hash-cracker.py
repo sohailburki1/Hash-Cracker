@@ -1,4 +1,16 @@
 import hashlib
+import time
+
+ascii_art = r"""
+------------------------------------------------------------
+  _  _   _   ___ _  _    ___ ___    _   ___ _  _____ ___ 
+ | || | /_\ / __| || |  / __| _ \  /_\ / __| |/ / __| _ \
+ | __ |/ _ \\__ \ __ | | (__|   / / _ \ (__| ' <| _||   /
+ |_||_/_/ \_\___/_||_|  \___|_|_\/_/ \_\___|_|\_\___|_|_\
+                                                         
+by Muhammad Sohail
+------------------------------------------------------------
+"""
 
 def main():
     target_hash = input("Enter the hash to crack: ")
@@ -9,11 +21,11 @@ def main():
 
 
 def crack_hash(hash_to_crack, wordlist_file, hash_type='md5'):
+    print(ascii_art)
     try:
         with open(wordlist_file, 'r') as file:
             for word in file.readlines():
                 word = word.strip()
-                print(f"Trying password: {word}")
 
                 if hash_type == 'md5':
                     hashed_word = hashlib.md5(word.encode()).hexdigest()
@@ -28,7 +40,10 @@ def crack_hash(hash_to_crack, wordlist_file, hash_type='md5'):
                     return
 
                 if hashed_word == hash_to_crack:
-                    print(f"Hash cracked! The password is: {word}")
+                    time.sleep(2)
+                    print("Cracking Hash.......")
+                    time.sleep(3)
+                    print(f"\nHash cracked! The password is: {word}")
                     return
 
             print("Password not found in wordlist.")
